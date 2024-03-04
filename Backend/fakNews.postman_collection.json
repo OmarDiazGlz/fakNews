@@ -1,0 +1,533 @@
+{
+	"info": {
+		"_postman_id": "4cb550e7-b580-46e8-aa65-258cc5891877",
+		"name": "fakNews",
+		"description": "Endpoints relativos al segundo proyecto.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31342322"
+	},
+	"item": [
+		{
+			"name": "userRoutes",
+			"item": [
+				{
+					"name": "Registro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Omar",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Díaz",
+									"type": "text"
+								},
+								{
+									"key": "BIO",
+									"value": "Hola soy una bio de prueba",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/omard/OneDrive/Escritorio/avatarPrueba.jpg"
+								},
+								{
+									"key": "nickName",
+									"value": "omarPrueba1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "omarprueba@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "DOB",
+									"value": "1994-04-04",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nickName",
+									"value": "omarPrueba1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar el perfil de usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RQYXlMb2FkIjp7ImlkIjo0LCJyb2xlIjoidXNlciJ9LCJpYXQiOjE3MDczOTY0NjUsImV4cCI6MTcwNzgyODQ2NX0.32pP2TczVh9gOzLM8gCfdlq8lDCTLQosKvdPLy648ZU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "BIO",
+									"value": "Hola estoy editando la bio de prueba",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "postsRoutes",
+			"item": [
+				{
+					"name": "Publicar un nuevo post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RQYXlMb2FkIjp7ImlkIjo0LCJyb2xlIjoidXNlciJ9LCJpYXQiOjE3MDczOTY0NjUsImV4cCI6MTcwNzgyODQ2NX0.32pP2TczVh9gOzLM8gCfdlq8lDCTLQosKvdPLy648ZU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Artículo de prueba 1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postPrueba.png"
+								},
+								{
+									"key": "topic",
+									"value": "Topic de prueba 1",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "Contenido del artículo de prueba 1",
+									"type": "text"
+								},
+								{
+									"key": "tag",
+									"value": "Política",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Visualizar todos los posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Visualizar los datos de un post único",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/post/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"post",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar una publicación",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RQYXlMb2FkIjp7ImlkIjoxLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzA3NDE0MTg4LCJleHAiOjE3MDc4NDYxODh9.HjhjXj2QDRTzRV1uK9JAvdrOHAjeg7mkHpUNYWQnPl8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Probando a editar el título",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "Probando a cambiar el body",
+									"type": "text"
+								},
+								{
+									"key": "tag",
+									"value": "Política",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/post/38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"post",
+								"38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Votar una publicación",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RQYXlMb2FkIjp7ImlkIjo0LCJyb2xlIjoidXNlciJ9LCJpYXQiOjE3MDczOTY0NjUsImV4cCI6MTcwNzgyODQ2NX0.32pP2TczVh9gOzLM8gCfdlq8lDCTLQosKvdPLy648ZU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"like\":1,\r\n\"postId\":31}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/liked",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"liked"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrado de noticias",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Mariano",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tag",
+									"value": "Política",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/posts?title=&tag=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": ""
+								},
+								{
+									"key": "tag",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Almacenar un post en favoritos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RQYXlMb2FkIjp7ImlkIjo0LCJyb2xlIjoidXNlciJ9LCJpYXQiOjE3MDczOTY0NjUsImV4cCI6MTcwNzgyODQ2NX0.32pP2TczVh9gOzLM8gCfdlq8lDCTLQosKvdPLy648ZU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/favorite/39",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"favorite",
+								"39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Visualizar mis favoritos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RQYXlMb2FkIjp7ImlkIjo0LCJyb2xlIjoidXNlciJ9LCJpYXQiOjE3MDczOTY0NjUsImV4cCI6MTcwNzgyODQ2NX0.32pP2TczVh9gOzLM8gCfdlq8lDCTLQosKvdPLy648ZU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/myfavorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"myfavorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comentar una publicación",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RQYXlMb2FkIjp7ImlkIjo0LCJyb2xlIjoidXNlciJ9LCJpYXQiOjE3MDczOTY0NjUsImV4cCI6MTcwNzgyODQ2NX0.32pP2TczVh9gOzLM8gCfdlq8lDCTLQosKvdPLy648ZU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "comment",
+									"value": "Este es otro comentario de prueba para ver como funcionan los comentarios",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/post/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"post",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar una publicación",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RQYXlMb2FkIjp7ImlkIjo0LCJyb2xlIjoidXNlciJ9LCJpYXQiOjE3MDczOTY0NjUsImV4cCI6MTcwNzgyODQ2NX0.32pP2TczVh9gOzLM8gCfdlq8lDCTLQosKvdPLy648ZU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/post/39",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"post",
+								"39"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

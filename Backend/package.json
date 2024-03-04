@@ -1,0 +1,36 @@
+{
+  "type": "module",
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Esto pertenece a la parte I lado backend del proyecto final",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "initDb": "node src/db/createDb.js && node src/db/createTables.js",
+    "dropDb": "node src/db/dropDb.js",
+    "createDb": "node src/db/createdb.js",
+    "createTables": "node src/db/createTables.js  "
+  },
+  "author": "Xavi, Omar, Carlos, Aron",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.3",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.6.5",
+    "nodemailer": "^6.9.7",
+    "sharp": "^0.33.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.0"
+  }
+}
