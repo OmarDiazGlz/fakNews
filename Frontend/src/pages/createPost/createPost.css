@@ -1,27 +1,26 @@
-
-.contenedorInputs{
-    display: flex;
-    flex-direction: column;
-    gap: 1 rem;
+.contenedorInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1 rem;
 }
-.titleSubtitle{
-    display: flex;
-    gap: 1rem;
-    justify-content: space-evenly;
+.titleSubtitle {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
 }
 
-.SelectTagOptions{
-    margin-bottom: 1rem;
-    padding: 1rem;
-    font-size: 16px;
-    border-radius: 10px;
-    border: 1px solid var(--light-grey-color);
-    width: 100%;
-    
+.SelectTagOptions {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--light-grey-color);
+  width: 100%;
+  background-color: #3b3b3b;
+  color: white;
 }
 @media only screen and (max-width: 600px) {
-    .createPostForm{
-     padding: 1rem ;
-    
-    }
+  .createPostForm {
+    padding: 1rem;
+  }
 }

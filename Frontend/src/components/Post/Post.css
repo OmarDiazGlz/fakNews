@@ -29,6 +29,7 @@
   width: 80px;
   border-radius: 5px;
   background-color: var(--main-red-color);
+  color: white;
 }
 
 .favoriteBtn:hover {
@@ -139,6 +140,7 @@
   border-radius: 10px;
   margin-bottom: 20px;
   background-color: var(--main-red-color);
+  color: white;
 }
 
 .editListPostBtn {
@@ -311,6 +313,8 @@
   box-shadow: var(--box-shadow);
   background-color: var(--main-red-color);
   font-family: "Lato", sans-serif;
+  font-weight: bold;
+  color: white;
 }
 
 .commentsForm button:hover {
@@ -355,6 +359,7 @@
   font-size: 1.4rem;
   border-radius: 15px;
   margin-bottom: -25px;
+  color: white;
 }
 
 .firstSearchBtn:hover {
@@ -503,6 +508,7 @@
     padding: 15px;
     border-radius: 15px;
   }
+
   .favoriteBtn {
     height: 30px;
     width: 60px;
