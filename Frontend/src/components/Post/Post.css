@@ -298,6 +298,7 @@
   height: 120px;
   border-radius: 10px;
   width: 100%;
+  color: white;
 }
 
 .commentsForm input::placeholder {
