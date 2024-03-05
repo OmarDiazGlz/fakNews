@@ -37,6 +37,13 @@
   color: white;
 }
 
+.loginForm input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #3b3b3b inset;
+  -webkit-text-fill-color: #fff;
+}
+
 .login-button {
   width: 20vw;
   height: 51px;
