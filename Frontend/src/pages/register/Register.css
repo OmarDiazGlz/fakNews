@@ -111,6 +111,10 @@ input {
   padding: 40px;
 }
 
+.boxregister input {
+  color: white;
+}
+
 .formFooter {
   display: flex;
   flex-direction: row;
@@ -133,7 +137,6 @@ input {
 }
 
 @media screen and (max-width: 500px) {
-
   .registerMainContent h1 {
     font-family: "Montserrat", sans-serif;
     color: #fff;
@@ -166,5 +169,4 @@ input {
     font-size: 20px;
     border-radius: 10px;
   }
-  
 }
