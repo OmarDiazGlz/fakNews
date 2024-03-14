@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import "./createPost.css"
+import "./createPost.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { TokenContext } from "../../utils/TokenContext";
@@ -41,7 +41,7 @@ const CreatePost = () => {
         },
       });
 
-      //navigate("/");
+      navigate("/");
       toast.success("¡Publicación creada exitosamente!");
     } catch (error) {
       setErrorAlert(<div>fakNews: {error.response.data.error}</div>);
@@ -58,25 +58,26 @@ const CreatePost = () => {
       <form className="boxregister createPostForm" onSubmit={createNewPost}>
         {errorAlert}
         <div className="contenedorInputs">
-         <div className="titleSubtitle">
-          <input
-            type="text"
-            onChange={(e) => setTitle(e.target.value)}
-            id="title"
-            name="title"
-            placeholder="Titulo"
-            className="input-48"
-            required
-          />
-          <input
-            type="text"
-            onChange={(e) => setTopic(e.target.value)}
-            id="topic"
-            name="topic"
-            placeholder="Subtítulo"
-            className="input-48"
-            required
-          /></div>
+          <div className="titleSubtitle">
+            <input
+              type="text"
+              onChange={(e) => setTitle(e.target.value)}
+              id="title"
+              name="title"
+              placeholder="Titulo"
+              className="input-48"
+              required
+            />
+            <input
+              type="text"
+              onChange={(e) => setTopic(e.target.value)}
+              id="topic"
+              name="topic"
+              placeholder="Subtítulo"
+              className="input-48"
+              required
+            />
+          </div>
           <input
             type="text"
             onChange={(e) => setbody(e.target.value)}
@@ -87,10 +88,13 @@ const CreatePost = () => {
             required
           />
           <div className="CreateTags">
-           
-            <select onChange={(e) => setTag(e.target.value)} className="SelectTagOptions">
-             
-                <option value="Otros" defaultChecked>Selecciona una categoría</option>
+            <select
+              onChange={(e) => setTag(e.target.value)}
+              className="SelectTagOptions"
+            >
+              <option value="Otros" defaultChecked>
+                Selecciona una categoría
+              </option>
               <option value="Política">Política</option>
               <option value="Economía">Economía</option>
               <option value="Tecnología">Tecnología</option>
@@ -100,7 +104,6 @@ const CreatePost = () => {
               <option value="Deportes">Deportes</option>
               <option value="Entretenimiento">Entretenimiento</option>
               <option value="NSFW">NSFW</option>
-            
             </select>
           </div>
         </div>
@@ -114,11 +117,18 @@ const CreatePost = () => {
           name="image"
           className="input-100"
         />
-        {image && (<img
-          src={image ? URL.createObjectURL(image) : ""}
-          alt="Preview"
-          style={{ maxWidth: "100%", maxHeight: "100%", marginBottom: "1rem" ,borderRadius:"10px"}}
-        />)}
+        {image && (
+          <img
+            src={image ? URL.createObjectURL(image) : ""}
+            alt="Preview"
+            style={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              marginBottom: "1rem",
+              borderRadius: "10px",
+            }}
+          />
+        )}
         <button type="submit" className="btn-enviar">
           Crear
         </button>
