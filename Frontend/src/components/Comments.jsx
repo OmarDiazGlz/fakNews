@@ -49,10 +49,10 @@ const Comments = ({ comments, postId, setComments }) => {
   return (
     <div className="comments">
       <h3>Comentarios</h3>
-      
+
       <form className="commentsForm" onSubmit={insertComment}>
         <input
-          type="tex"
+          type="text"
           onChange={(e) => setCommentValue(e.target.value)}
           value={commentValue}
           id="comment"
